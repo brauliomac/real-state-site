@@ -1,6 +1,9 @@
 import React from 'react'
 
 const Contact = () => {
+
+    
+
   return (
     <div className='text-center p-6 py-20 lg:px-32 w-full overflow-hidden' id='Contact'>
       <h1 className='text-2xl sm:text-4xl font-bold mb-2 text-center'>
@@ -38,7 +41,19 @@ const Contact = () => {
             </div>
         </div>
 
-        
+        <div className='my-6 text-left'>
+            Message
+            <textarea 
+                className='w-full border border-gray-300 rounded py-3 px-4 mt-2 h-48 resize-none' 
+                name="Message" 
+                placeholder='Message' 
+                required>
+            </textarea>
+        </div>
+
+        <button className='bg-blue-600 text-white py-2 px-12 mb-10 rounded'>
+            Send Message
+        </button>
       </form>
     </div>
   )
