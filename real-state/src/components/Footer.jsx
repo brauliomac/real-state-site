@@ -44,11 +44,11 @@ const Footer = () => {
 
                 <button className='py-2 px-4 rounded bg-blue-500 text-white'>Subscribe</button>
             </div>
-        </div>
+        </div> 
       </div>
 
-      <div>
-
+      <div className='border-t border-gray-700 py-4 mt-10 text-center text-gray-500'>
+        Copyright { new Date().getFullYear() } © All Right Reserved.
       </div>
     </div>
   )
