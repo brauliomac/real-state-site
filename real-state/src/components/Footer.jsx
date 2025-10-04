@@ -15,7 +15,7 @@ const Footer = () => {
             </p>
         </div>
 
-        <div className='w-full md:w-1/5 mb-8 md:mb-0'>
+        <div className='w-full md:w-1/5 mb-8 md:mb-0 pt-2'>
             <h3 className='text-white text-lg font-bold mb-4'>Company</h3>
 
             <ul className='flex flex-col gap-2 text-gray-400'>
@@ -26,7 +26,7 @@ const Footer = () => {
             </ul>
         </div>
 
-        <div className='w-full md:w-1/3'>
+        <div className='w-full md:w-1/3 pt-2'>
             <h3 className='text-white text-lg font-bold mb-4'>
                 Subscribe to our newsletter
             </h3>
