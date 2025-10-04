@@ -1,17 +1,31 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { assets, projectsData } from '../assets/assets'
 
 const Projects = () => {
 
-    const [ currentIndex, setCurrentIndex] = useState(0)
-    const [carsToShow, setCarsToShow] = useState(1)
+    const [ currentIndex, setCurrentIndex ] = useState(0)
+    const [ cardsToShow, setCardsToShow ] = useState(1)
+
+    useEffect(() => {
+        const updateCardsToShow = () => {
+            if (window.innerWidth >= 1024){
+                setCardsToShow(projectsData.length)
+            } else {
+                setCardsToShow(1)
+            }
+        }
+        updateCardsToShow()
+
+        window.addEventListener("resize", updateCardsToShow)
+        return () =>  window.removeEventListener("resize", updateCardsToShow)
+    }, [])
 
     const nextProject = () => {
-        setCurrentIndex ((prevIndex) => (prevIndex + 1) % projectsData.length)
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % projectsData.length)
     }
 
-     const prevProject = () => {
-        setCurrentIndex((prevIndex) => prevIndex === 0 ? projectsData.length -1 : prevIndex -1 )
+    const prevProject = () => {
+        setCurrentIndex((prevIndex) => prevIndex === 0 ? projectsData.length - 1 : prevIndex - 1 )
     }
 
   return (
@@ -27,11 +41,12 @@ const Projects = () => {
         { /* slider buttons*/}
 
         <div className='flex justify-end items-center mb-8'>
-            <button className='p-3 bg-gray-200 rounded mr-2' aria-label='Previous Project' title='Previous Project'>
+            <button onClick={ prevProject } className='p-3 bg-gray-200 rounded mr-2' aria-label='Previous Project' title='Previous Project'>
                 <img src={ assets.left_arrow } alt="Previous" />
             </button>
 
-            <button className='p-3 bg-gray-200 rounded mr-2' aria-label='Next Project' title='Next Project'>
+            <button  
+                onClick={ nextProject } className='p-3 bg-gray-200 rounded mr-2' aria-label='Next Project' title='Next Project'>
                 <img src={ assets.right_arrow } alt="Next" />
             </button>
         </div>
@@ -39,7 +54,8 @@ const Projects = () => {
         { /* slider container*/ }
 
         <div className='overflow-hidden'>
-            <div className='flex gap-8 transition-transform duration-500 ease-in-out'>
+            <div className='flex gap-8 transition-transform duration-500 ease-in-out' 
+                 style={{transform: `translateX(-${(currentIndex * 100) / cardsToShow}%)`}}>
                 { projectsData.map((project, index) => (
                     <div key={ index } className='relative flex-shrink-0 w-full sm:w-1/4'>
                         <img src={ project.image } alt={ project.title } className='w-full h-auto mb-14' />
