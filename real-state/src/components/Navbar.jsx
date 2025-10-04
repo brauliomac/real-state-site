@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { assets } from "../assets/assets"
 import { useEffect } from 'react'
 
-const Navbar = () => {
+const Navbar = () => { 
   const [showMobileMenu, setShowMobileMenu] = useState(false)
 
   useEffect(() => {
