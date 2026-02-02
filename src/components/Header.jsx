@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../../../real-state/src/components/Navbar'
+import Navbar from './Navbar'
 import { motion } from 'framer-motion'
 
 const Header = () => {

@@ -24,8 +24,8 @@ const About = () => {
         <div className='flex flex-col md:flex-row items-center md:items-start md:gap-20'>
             <img src={ assets.brand_img} className='w-full sm:w-1/2 max-w-lg' alt="" />
             <div className='flex flex-col items-center md:items-start mt-10 text-gray-600'>
-                <div className='grid grid-cols-2 gap-6 md:gap-10 w-full 2xl pr-28'>
-                    <div className='grid grid-cols-2 md:gap-10 w-full 2xl:pr-28'>
+                <div className='grid grid-cols-2 sm: gap-6 md:gap-10 w-full 2xl:pr-28'>
+                    <div className='grid grid-cols-2 md:gap-10 w-full 2xl:pr-30'>
                         <div>
                             <p className='text-4xl font-medium text-gray-800'>10+</p>
                             <p>Years of Excellence</p>
@@ -47,7 +47,7 @@ const About = () => {
                         </div>
                     </div>
 
-                    <p className='my-10 max-w-lg'>
+                    <p className='my-10 max-w-lg '>
                         Lorem ipsum dolor sit amet consectetur adipisicing
                         elit. Eos quia odit illo, velit excepturi facilis
                         ipsam voluptas voluptatem blanditiis natus.
